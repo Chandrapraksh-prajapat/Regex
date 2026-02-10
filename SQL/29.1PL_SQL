@@ -1,0 +1,26 @@
+-- declare
+--     var int :=0;
+-- BEGIN 
+--     var :=12;
+--     if(mod(var,2)=0) then
+--         DBMS_OUTPUT.PUT_LINE('hello world' || '-' || var);
+--     else 
+--      DBMS_OUTPUT.PUT_LINE('Regex Software');
+--      end if ;
+-- END;
+
+
+
+declare
+     var int :=0;
+BEGIN 
+   WHILE  var <=3 LOOP
+        DBMS_OUTPUT.PUT_LINE('Counter is : '|| var);
+        var :=var+1;
+    end loop;
+END;
+
+
+
+
+
