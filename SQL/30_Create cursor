@@ -1,0 +1,14 @@
+declare 
+        cursor emp_cur is select * from emp_cp;   
+        emp_record emp_cp%rowtype;
+
+BEGIN
+      open emp_cur;
+    --   FETCH emp_cur into emp_record;
+
+      if emp_cur%isopen then 
+          dbms_output.PUT_LINE('cursor open');
+
+    end if;
+  close emp_cur; -- close cursor here   
+END;
