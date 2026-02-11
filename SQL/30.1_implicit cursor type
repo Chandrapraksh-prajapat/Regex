@@ -1,0 +1,18 @@
+-- create table emp_cp
+--  as select employee_id,first_name from hr.employees where employee_id between 100 and 104;
+
+-- select * from emp_cp;
+
+ -- there are two type of cursor 
+  
+--   (1). implicit => autometic created by PL/SQL
+-- 						when we perform any dml(insert /update) operation 
+-- 							%found , %not found , %row_count ,%is_open
+  
+
+BEGIN 
+    dbms_Output.put_line('we are inside the begin');
+--   update emp_cp set first_name='Regex';
+  delete from emp_cp where employee_id<103;
+     dbms_Output.put_line(SQl%rowcount);
+end;
