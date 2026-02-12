@@ -1,0 +1,20 @@
+declare 
+        cursor emp_cur is select * from emp_cp;   
+        -- emp_record emp_cp%rowtype;
+
+BEGIN
+      for line in emp_cur LOOP
+            DBMS_OUTPUT.PUT_LINE(line.employee_id);
+      end LOOP;
+
+
+        -- open emp_cur;
+--        FETCH emp_cur into emp_record;
+
+--     while emp_cur%found LOOP
+--         DBMS_OUTPUT.PUT_LINE(emp_record.employee_id);
+--          FETCH emp_cur into emp_record;
+--     end LOOP; 
+
+--   close emp_cur; -- close cursor here   
+END;
