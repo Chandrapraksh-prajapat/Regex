@@ -1,0 +1,8 @@
+create or replace PROCEDURE procedure_test
+as 
+begin 
+    dbms_output.put_line('Hello procedure');
+END;
+
+-- EXECUTE procedure_test();
+
