@@ -23,9 +23,9 @@ SELECT
 
 ---
 
-## ✅ 585. Investments in 2016 (Medium)
+##  585. Investments in 2016 (Medium)
 
-### 📝 Problem Summary  
+###  Problem Summary  
 Find the sum of all `tiv_2016` values for policyholders who:
 
 - Have the same `tiv_2015` as at least one other policyholder  
@@ -42,5 +42,27 @@ SELECT ROUND(SUM(tiv_2016), 2) AS tiv_2016
                         GROUP BY tiv_2015 HAVING COUNT(*) > 1)
                     AND (lat, lon) IN (SELECT lat, lon FROM Insurance
                                         GROUP BY lat, lon HAVING COUNT(*) = 1);
+
+
+
+---
+
+##  1068. Product Sales Analysis I (Easy)
+
+###  Problem Summary  
+Return product name, year, and price for each sale by joining `Sales` and `Product` tables.
+
+---
+
+###  SQL Solution
+
+```sql
+SELECT 
+    p.product_name,
+    s.year,
+    s.price
+FROM Sales s
+INNER JOIN Product p
+    ON s.product_id = p.product_id;
 
 
