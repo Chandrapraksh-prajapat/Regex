@@ -85,3 +85,24 @@ FROM Project p
 INNER JOIN Employee e
     ON p.employee_id = e.employee_id
 GROUP BY p.project_id;
+
+
+---
+
+## ✅ 1141. User Activity for the Past 30 Days I (Easy)
+
+### 📝 Problem Summary  
+Find the daily active users for a period of 30 days ending on 2019-07-27 (inclusive).  
+A user is considered active if they made at least one activity on that day.
+
+---
+
+### 💡 SQL Solution
+
+```sql
+SELECT 
+    activity_date AS day,
+    COUNT(DISTINCT user_id) AS active_users
+FROM Activity
+WHERE activity_date BETWEEN '2019-06-28' AND '2019-07-27'
+GROUP BY activity_date;
