@@ -66,3 +66,22 @@ INNER JOIN Product p
     ON s.product_id = p.product_id;
 
 
+---
+
+##  1075. Project Employees I (Easy)
+
+### Problem Summary  
+Find the average experience years of employees for each project, rounded to 2 decimal places.
+
+---
+
+###  SQL Solution
+
+```sql
+SELECT 
+    p.project_id,
+    ROUND(AVG(e.experience_years), 2) AS average_years
+FROM Project p
+INNER JOIN Employee e
+    ON p.employee_id = e.employee_id
+GROUP BY p.project_id;
