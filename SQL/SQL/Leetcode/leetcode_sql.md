@@ -184,3 +184,31 @@ LEFT JOIN UnitsSold u
     ON p.product_id = u.product_id
     AND u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id;
+
+
+
+---
+
+## ✅ 1280. Students and Examinations (Easy)
+
+### 📝 Problem Summary  
+For each student and each subject, return the number of exams attended.  
+If a student did not attend an exam for a subject, return 0.
+
+---
+
+### 💡 SQL Solution
+
+```sql
+SELECT 
+    s.student_id,
+    s.student_name,
+    sb.subject_name,
+    COUNT(e.subject_name) AS attended_exams
+FROM Students s
+JOIN Subjects sb
+LEFT JOIN Examinations e
+    ON s.student_id = e.student_id
+    AND sb.subject_name = e.subject_name
+GROUP BY s.student_id, sb.subject_name
+ORDER BY s.student_id ASC, sb.subject_name ASC;
