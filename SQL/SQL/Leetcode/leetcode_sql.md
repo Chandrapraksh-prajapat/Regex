@@ -212,3 +212,4 @@ LEFT JOIN Examinations e
     AND sb.subject_name = e.subject_name
 GROUP BY s.student_id, sb.subject_name
 ORDER BY s.student_id ASC, sb.subject_name ASC;
+     
