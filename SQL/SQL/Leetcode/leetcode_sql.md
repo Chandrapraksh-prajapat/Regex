@@ -212,3 +212,14 @@ LEFT JOIN Examinations e
     AND sb.subject_name = e.subject_name
 GROUP BY s.student_id, sb.subject_name
 ORDER BY s.student_id ASC, sb.subject_name ASC;
+
+
+
+
+### Q. Write a solution to find the patient_id, patient_name, and conditions of the patients who have Type I Diabetes. Type I Diabetes always starts with DIAB1 prefix.
+
+----
+
+### SQL solution :-
+
+select patient_id,patient_name,conditions from patients where conditions like "% DIAB1%" or conditions like "DIAB1%";
