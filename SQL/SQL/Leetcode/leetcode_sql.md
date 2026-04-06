@@ -232,3 +232,17 @@ select patient_id,patient_name,conditions from patients where conditions like "%
 #### SQL solution :
 
 select customer_id , count(visit_id) as count_no_trans from visits  where visit_id not in (select visit_id from transactions) group by customer_id;
+
+
+
+### Q. Write a solution to report the name and balance of users with a balance higher than 10000. The balance of an account is equal to the sum of the amounts of all transactions involving that account.
+
+
+---
+
+### SQL Solution :
+
+select u.name , sum(t.amount) as BALANCE from transactions as t 
+    join users as u on u.account=t.account 
+        group by t.account having sum(t.amount)>10000 ;
+ 
