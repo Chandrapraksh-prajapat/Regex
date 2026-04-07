@@ -245,4 +245,21 @@ select customer_id , count(visit_id) as count_no_trans from visits  where visit_
 select u.name , sum(t.amount) as BALANCE from transactions as t 
     join users as u on u.account=t.account 
         group by t.account having sum(t.amount)>10000 ;
- 
+
+
+
+### Q. Write a solution to find the percentage of the users registered in each contest rounded to two decimals.
+
+Return the result table ordered by percentage in descending order. In case of a tie, order it by contest_id in ascending order.
+
+
+---
+
+#### SQL Solution -->>
+
+select 
+contest_id, 
+round(count(distinct user_id) * 100 /(select count(user_id) from Users) ,2) as percentage
+from  Register
+group by contest_id
+order by percentage desc,contest_id
